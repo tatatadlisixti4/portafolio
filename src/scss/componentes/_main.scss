@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+main {
+    .menu {
+        &.oculto {
+            transform: translateX(-100%); 
+            //transition: transform 0.3s ease-out;
+            
+        }
+        &.visible { 
+            height: 50rem; 
+            background-color: v.$negro; 
+            color: v.$blanco; 
+            transform: translateX(0); 
+            transition: transform 0.3s ease-in;
+        }
+    }
+}
+
+.navegacion-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: left;
+    padding: 16rem 0 16rem 2rem;
+
+    a {
+        span {
+            position: relative;
+        }
+    }
+
+    
+    a span::after {
+        content: '';
+        position: absolute;
+        left: -10%;
+        top: 50%;
+        width: 120%;
+        height: 0.3rem; 
+        background-color: v.$rojo; 
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    a:hover span::after {
+        transform: scaleX(1);
+    }
+}
+    

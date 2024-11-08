@@ -1,0 +1,112 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+span {
+    font-weight: bold;
+}
+
+.header {
+    padding: 2rem;
+    color: v.$blanco;
+    background-color: v.$negro;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navegacion-principal {
+        display: none;
+    }
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        .navegacion-principal {
+            display: block;
+            color: v.$gris;
+            display: flex;
+            gap: 3rem;
+            transition: color 0.5s ease-in;
+            margin: .8rem;
+            span {
+                font-size: 1.6rem;
+                text-decoration: line-through;
+                text-decoration-color: v.$rojo;
+            }
+        }
+        .navegacion-principal a:first-child{
+            color: v.$blanco;
+            transition: none;
+        }
+        .navegacion-principal a:hover{
+            color: v.$blanco;
+        }
+    }
+    .index-logo {
+        .logo {
+            text-transform: uppercase;
+            font-size: 2.1rem;
+            span {
+                letter-spacing: -2px;
+            }
+        }
+    }
+
+    .mobile-menu {
+        @include m.tablet{
+            display: none;
+        }
+
+        .line-button {
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        /* Desactivado: 2 lineas */
+        .line {
+            background-color: v.$blanco; 
+            height: .2rem; 
+            width: 3rem;
+            transition: all 0.18s ease;
+            
+        }
+        .line-top {
+            transition: all 0.18s ease;
+        }
+        .line-bottom {
+            margin-left: 1rem;
+            margin-right: 0;
+            width: 2rem;
+            transition: all 0.18s ease;
+            
+        }
+
+        /* Activar: una equis */
+        .line-button#on {
+            .line {
+                width: 1.7rem;
+                margin: 0 auto;
+                transition: all 0.18s ease;
+                &.line-top {
+                    transform-origin: right;
+                    transform: rotate(-45deg);
+                    
+                }
+                &.line-bottom {
+                    transform-origin: right;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+
+
