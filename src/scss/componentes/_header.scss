@@ -32,15 +32,18 @@ span {
                 text-decoration: line-through;
                 text-decoration-color: v.$rojo;
             }
+            & a:first-child{
+                color: v.$blanco;
+                transition: none;
+            }
+            & a:hover{
+                color: v.$blanco;
+            }
+
         }
-        .navegacion-principal a:first-child{
-            color: v.$blanco;
-            transition: none;
-        }
-        .navegacion-principal a:hover{
-            color: v.$blanco;
-        }
+
     }
+    
     .index-logo {
         .logo {
             text-transform: uppercase;

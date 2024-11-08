@@ -4,21 +4,67 @@
 
 main {
     .menu-base {
+        padding: 3rem 0 ;
         background-color: v.$negro;
-        height: 50rem;
+        height: 80rem;
+        width: 100%;
+
+        @include m.tablet {
+            .contenedor-menu-base {
+                
+                width: 98%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+                padding: 2rem;
+    
+                .elemento{  
+                    height: 65rem;
+                    width: 40rem;
+                    background-color: v.$negro;
+                    transition: transform 0.2s ease-in .15s;  
+                    &:not(:last-child):hover {
+                        &:nth-child(1){
+                            transform: scale(1.5, 1.2) translateX(-5rem) translateY(2rem);
+                        }
+                        &:nth-child(2){
+                            transform: scale(1.5, 1.2) translateX(-4rem) translateY(2rem);
+                        }
+                        &:nth-child(3){
+                            transform: scale(1.5, 1.2) translateX(-2rem) translateY(2rem);
+                        }
+                        &:nth-child(4){
+                            transform: scale(1.5, 1.2) translateX(1rem) translateY(2rem);
+                        }
+                        &:nth-child(5){
+                            transform: scale(1, 1) translateX(0) translateY(0);
+                        }
+                    }
+    
+                    img, 
+                    video {
+                        //border-radius: 1rem;
+                        transition: transform 0.2s ease-in-out 0.5s;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        
     }
     .menu {
+        height: 80rem;
         &.oculto {
             transform: translateX(-100%); 
-            //transition: transform 0.3s ease-out;
-            
+            transition: all 0.3s ease-in;
         }
-        &.visible { 
-            height: 50rem; 
+        &.visible {
             background-color: v.$negro; 
             color: v.$blanco; 
             transform: translateX(0); 
-            transition: transform 0.3s ease-in;
+            transition: all 0.3s ease-in;
         }
     }
 }
@@ -54,6 +100,7 @@ main {
         }
     }
 }
+
 
 .footer-menu {
     display: flex;
