@@ -6,6 +6,7 @@ span {
 }
 
 .header {
+    
     padding: 2rem;
     color: v.$blanco;
     background-color: v.$negro;
@@ -17,6 +18,8 @@ span {
     }
 
     @include m.tablet {
+        position: sticky;
+        top: 0;z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center; 
@@ -27,11 +30,20 @@ span {
             gap: 3rem;
             transition: color 0.5s ease-in;
             margin: .8rem;
+            
             span {
+                color: v.$gris;
                 font-size: 1.6rem;
-                text-decoration: line-through;
-                text-decoration-color: v.$rojo;
+                text-decoration: none;
+                &#nav-activo {
+                    color: v.$blanco;
+                    font-size: 1.6rem;
+                    text-decoration: line-through;
+                    text-decoration-color: v.$rojo;
+                }
+
             }
+            
             & a:first-child{
                 color: v.$blanco;
                 transition: none;

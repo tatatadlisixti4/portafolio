@@ -9,6 +9,8 @@ $$$(document, 'DOMContentLoaded', function() {
 
 function iniciarApp() {
     boton_nav();
+    activar_elemento();
+    nav_activo();
 }
 
 function boton_nav() {
@@ -55,6 +57,27 @@ function desplazamiento_menu() {
         
     }
 }
+
+function activar_elemento() {
+    const elementos = $$('.elemento');
+    const activo = $('#activo');
+    elementos.forEach(elemento => {
+        $$$(elemento, 'mouseover', () => {
+            activo.id = 'noactivo';
+        });
+        $$$(elemento, 'mouseout', () => {
+            if(activo.id !== 'activo') {
+                activo.id = 'activo';
+            }
+        });
+
+    });  
+}
+
+function nav_activo() {
+
+}
+
 
 
 
