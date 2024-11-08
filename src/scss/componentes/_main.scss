@@ -3,6 +3,10 @@
 
 
 main {
+    .menu-base {
+        background-color: v.$negro;
+        height: 50rem;
+    }
     .menu {
         &.oculto {
             transform: translateX(-100%); 
@@ -27,27 +31,41 @@ main {
     padding: 16rem 0 16rem 2rem;
 
     a {
+        text-transform: uppercase;
+        font-weight: bold;
         span {
             position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                left: -10%;
+                top: 50%;
+                width: 120%;
+                height: 0.3rem; 
+                background-color: v.$rojo; 
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.2s ease-in-out;
+            }
+        }
+        
+        &:hover span::after {
+            transform: scaleX(1);
         }
     }
+}
 
-    
-    a span::after {
-        content: '';
-        position: absolute;
-        left: -10%;
-        top: 50%;
-        width: 120%;
-        height: 0.3rem; 
-        background-color: v.$rojo; 
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.2s ease-in-out;
-    }
-    
-    a:hover span::after {
-        transform: scaleX(1);
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 3rem 2rem;
+    align-items: center;
+
+
+    a:hover{
+        cursor: pointer;
+        color: v.$rojo;
     }
 }
+
     
