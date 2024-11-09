@@ -3,74 +3,76 @@
 
 
 main {
+    position: relative;
     .menu-base {
+        position: absolute;
         padding: 3rem ;
         background-color: v.$negro;
         height: 80rem;
         width: 100%;
-
-        @include m.tablet {
-            .contenedor-menu-base {
-                width: 70%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                gap: 1rem;
-                margin-top: 5rem;
+        .contenedor-menu-base {
+            width: 70%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 5rem;
+            
+            .elemento{  
+                height: 60rem;
+                width: 35rem;
                 
-                .elemento{  
-                    height: 60rem;
-                    width: 35rem;
-                    
+                filter: brightness(20%);
+                transition: transform 0.2s ease-in .15s, filter 0.2s ease-in; 
+                
+                &#activo{
+                    filter: brightness(100%);
+                    transform: scale(1.7, 1.2) translateX(-8rem) ;
+                }
+                
+                &#noactivo {
                     filter: brightness(20%);
-                    transition: transform 0.2s ease-in .15s, filter 0.2s ease-in; 
-                    
-                    &#activo{
-                        filter: brightness(100%);
+                    transform: scale(1, 1) translateX(0) translateY(0);
+                }
+                
+                &:hover,
+                &#noactivo:hover{                   
+                    filter: brightness(100%);
+                    &:nth-child(1){
                         transform: scale(1.7, 1.2) translateX(-8rem) ;
                     }
-                    
-                    &#noactivo {
-                        filter: brightness(20%);
-                        transform: scale(1, 1) translateX(0) translateY(0);
+                    &:nth-child(2){
+                        transform: scale(1.7, 1.2) translateX(-8rem) ;
                     }
-                    
-                    &:hover,
-                    &#noactivo:hover{                   
-                        filter: brightness(100%);
-                        &:nth-child(1){
-                            transform: scale(1.7, 1.2) translateX(-8rem) ;
-                        }
-                        &:nth-child(2){
-                            transform: scale(1.7, 1.2) translateX(-8rem) ;
-                        }
-                        &:nth-child(3){
-                            transform: scale(1.7, 1.2) translateX(-8rem) ;
-                        }
-                        &:nth-child(4){
-                            transform: scale(1.7, 1.2) translateX(-8rem) ;
-                        }
+                    &:nth-child(3){
+                        transform: scale(1.7, 1.2) translateX(-8rem) ;
                     }
-    
-                    img {
-                        //border: .2rem solid white;
-                        border-radius: .3rem;
-                        transition: transform 0.2s ease-in-out 0.2s;
-                        width: 100%;
-                        height: 100%;
+                    &:nth-child(4){
+                        transform: scale(1.7, 1.2) translateX(-8rem) ;
                     }
+                }
+
+                img {
+                    //border: .2rem solid white;
+                    border-radius: .3rem;
+                    transition: transform 0.2s ease-in-out 0.2s;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
-        
+
     }
     .menu {
+        position: absolute;
         height: 80rem;
         &.oculto {
             transform: translateX(-100%); 
             transition: all 0.3s ease-in;
+            width: 100%;
         }
         &.visible {
+            width: 100%;
             background-color: v.$negro; 
             color: v.$blanco; 
             transform: translateX(0); 
