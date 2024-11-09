@@ -18,22 +18,20 @@ main {
                 gap: 1rem;
                 margin-top: 5rem;
                 
-                
-    
                 .elemento{  
                     height: 60rem;
                     width: 35rem;
                     
-                    filter: brightness(50%);
+                    filter: brightness(20%);
                     transition: transform 0.2s ease-in .15s, filter 0.2s ease-in; 
                     
                     &#activo{
                         filter: brightness(100%);
-                        transform: scale(1.6, 1.2) translateX(-7rem) ;
+                        transform: scale(1.7, 1.2) translateX(-8rem) ;
                     }
                     
                     &#noactivo {
-                        filter: brightness(50%);
+                        filter: brightness(20%);
                         transform: scale(1, 1) translateX(0) translateY(0);
                     }
                     
@@ -41,16 +39,16 @@ main {
                     &#noactivo:hover{                   
                         filter: brightness(100%);
                         &:nth-child(1){
-                            transform: scale(1.6, 1.2) translateX(-7rem) ;
+                            transform: scale(1.7, 1.2) translateX(-8rem) ;
                         }
                         &:nth-child(2){
-                            transform: scale(1.6, 1.2) translateX(-7rem) ;
+                            transform: scale(1.7, 1.2) translateX(-8rem) ;
                         }
                         &:nth-child(3){
-                            transform: scale(1.6, 1.2) translateX(-7rem) ;
+                            transform: scale(1.7, 1.2) translateX(-8rem) ;
                         }
                         &:nth-child(4){
-                            transform: scale(1.6, 1.2) translateX(-7rem) ;
+                            transform: scale(1.7, 1.2) translateX(-8rem) ;
                         }
                     }
     
@@ -111,7 +109,6 @@ main {
         }
     }
 }
-
 
 .footer-menu {
     display: flex;

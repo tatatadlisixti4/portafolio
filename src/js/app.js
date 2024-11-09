@@ -70,12 +70,18 @@ function activar_elemento() {
                 activo.id = 'activo';
             }
         });
-
     });  
 }
 
 function nav_activo() {
-
+    const elementos = $('.navegacion-principal');
+    (elementos.querySelectorAll('span')).forEach(span => {
+        $$$(span, 'click', () => {
+            const activo = $('#nav-activo');
+            activo.removeAttribute('id');
+            span.id = 'nav-activo';
+        });
+    });
 }
 
 
